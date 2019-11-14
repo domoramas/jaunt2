@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'user.apps.UserConfig',
     'django.contrib.gis',
+    'artist_profile.apps.ArtistProfileConfig',
     
 ]
 

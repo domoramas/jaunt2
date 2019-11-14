@@ -4,25 +4,25 @@ from django.contrib.auth import get_user_model
 
 class UsersManagersTests(TestCase):
 
-  # def test_create_user(self):
-  #   User = get_user_model()
-  #   user = User.objects.create_user(email ='normal@user.com', password = 'test', first_name = "Test", last_name = "Testerson", city = "portland", state = "Oregon")
-  #   self.assertEqual(user.email, "normal@user.com")
-  #   self.assertEqual(user.first_name, "Test")
-  #   self.assertEqual(user.last_name, "Testerson")
-  #   self.assertTrue(user.is_active)
+  def test_create_user(self):
+    User = get_user_model()
+    user = User.objects.create_user(email ='normal@user.com', password = 'test', first_name = "Test", last_name = "Testerson", city = "portland", state = "Oregon")
+    self.assertEqual(user.email, "normal@user.com")
+    self.assertEqual(user.first_name, "Test")
+    self.assertEqual(user.last_name, "Testerson")
+    self.assertTrue(user.is_active)
   
-  #   try:
+    try:
      
-  #     self.assertIsNone(user.username)
-  #   except AttributeError:
-  #     pass
-  #   with self.assertRaises(TypeError):
-  #     User.objects.create_user()
-  #   with self.assertRaises(TypeError):
-  #     User.objects.create_user(email = "")
-  #   with self.assertRaises(ValueError):
-  #     User.objects.create_user(email = '', password ='foo', first_name = 'Test', last_name = "Testerson",city = "portland", state = "Oregon")
+      self.assertIsNone(user.username)
+    except AttributeError:
+      pass
+    with self.assertRaises(TypeError):
+      User.objects.create_user()
+    with self.assertRaises(TypeError):
+      User.objects.create_user(email = "")
+    with self.assertRaises(ValueError):
+      User.objects.create_user(email = '', password ='foo', first_name = 'Test', last_name = "Testerson",city = "portland", state = "Oregon")
 
   def test_create_superuser(self):
     User = get_user_model()
