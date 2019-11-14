@@ -4,7 +4,9 @@ from .models import CustomUser
 from .forms import ChangeUserForm, CreateUserForm
 
 # Register your models here.
+admin.site.unregister(User)
 
+@admin.register(User)
 class CustomUserAdmin(UserAdmin):
   add_form = CreateUserForm
   form = ChangeUserForm
